@@ -38,7 +38,7 @@ public class EntityService<T,ID> {
 
     protected T saveEntity(T entity) {
         if(getRepository() == null){
-            throw new RuntimeException("JpaRepository can't be NULL");
+            throw new RuntimeException("找不到 JpaRepository");
         }
         try {
             return (T) getRepository().save(entity);

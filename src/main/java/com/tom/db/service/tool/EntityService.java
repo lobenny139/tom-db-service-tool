@@ -1,6 +1,5 @@
 package com.tom.db.service.tool;
 
-
 import com.tom.db.exception.*;
 import lombok.Getter;
 import lombok.Setter;

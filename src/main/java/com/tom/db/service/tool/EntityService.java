@@ -33,7 +33,7 @@ public class EntityService<T,ID> {
     protected EntityManager entityManager;
 
     @Autowired(required = true)
-    protected JpaRepository repository;
+    protected JpaRepository<T,ID> repository;
 
     protected T saveEntity(T entity) {
         if(getRepository() == null){

@@ -63,7 +63,7 @@ public class AccessAspect {
             }
             logger.info("[{}] - [{}] 開始" + op + "資料, 資料參數" + Arrays.toString(joinPoint.getArgs()), clazzName, methodName);
             object = joinPoint.proceed();
-            if(object.getClass().getCanonicalName().indexOf("java.util.ArrayList") >=0){
+            if(object != null && object.getClass().getCanonicalName().indexOf("java.util.ArrayList") >=0){
                 logger.info("[{}] - [{}] 結束" + op + "資料, 成功" + op + "{}.", clazzName, methodName, ((List)object).size() +"筆記錄" );
             }else{
                 logger.info("[{}] - [{}] 結束" + op + "資料, 成功" + op + "[{}].", clazzName, methodName, object.getClass().getCanonicalName());

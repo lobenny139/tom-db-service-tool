@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
@@ -32,7 +31,7 @@ public class EntityService<T,ID> {
     @PersistenceContext
     protected EntityManager entityManager;
 
-    @Autowired(required = true)
+//    @Autowired(required = true)
     protected JpaRepository<T,ID> repository;
 
     protected T saveEntity(T entity) {
